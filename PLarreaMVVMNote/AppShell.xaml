@@ -6,10 +6,5 @@
     xmlns:local="clr-namespace:PLarreaMVVMNote"
     Shell.FlyoutBehavior="Disabled"
     Title="PLarreaMVVMNote">
-
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    
 </Shell>

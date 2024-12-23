@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PLarreaMVVMNote.Views.AboutPage"
+             xmlns:viewModels="clr-namespace:PLarreaMVVMNote.ViewModels"
+             Title="Paul Larrea">
+
+    <ContentPage.BindingContext>
+        <viewModels:AboutViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Margin="20">
+
+            <!-- Header Section -->
+            <HorizontalStackLayout Spacing="15">
+                <Image Source="dotnet_bot.png"
+                   SemanticProperties.Description="El bot de .NET saludando!"
+                   HeightRequest="64" WidthRequest="64" />
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Label FontSize="24" FontAttributes="Bold" Text="{Binding Title}" TextColor="#333333"/>
+                    <Label FontSize="18" Text="{Binding Version}" TextColor="#666666"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <!-- Description Section -->
+            <Label Text="El patr�n MVVM (Model-View-ViewModel) es un poderoso patr�n arquitect�nico utilizado para separar las responsabilidades en tu aplicaci�n."
+               FontSize="16" TextColor="#444444" Padding="5"/>
+
+            <Label Text="En esta aplicaci�n, MVVM asegura una clara separaci�n entre la interfaz de usuario (View) y la l�gica (ViewModel). El ViewModel act�a como un puente, exponiendo comandos y propiedades a la View mientras se comunica con los modelos de datos subyacentes. Este enfoque mejora la capacidad de prueba, escalabilidad y mantenibilidad del c�digo."
+               FontSize="16" TextColor="#444444" Padding="5"/>
+
+            <Label Text="Por ejemplo, las etiquetas 'T�tulo' y 'Versi�n' est�n vinculadas a propiedades en el AboutViewModel, demostrando c�mo los datos fluyen perfectamente desde el ViewModel hacia la View. De manera similar, el bot�n 'Aprender m�s...' est� conectado a un comando en el ViewModel, permitiendo interacciones sin acoplar estrechamente la View a la l�gica."
+               FontSize="16" TextColor="#444444" Padding="5"/>
+
+            <Button Text="Aprender m�s..."
+                Command="{Binding ShowMoreInfoCommand}"
+                BackgroundColor="#007ACC" 
+                TextColor="White" 
+                CornerRadius="10" 
+                Padding="10" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
